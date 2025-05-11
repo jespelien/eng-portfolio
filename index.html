@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jan Leuca Espelien | Engineering Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #22223b;
+      --accent: #4ea8de;
+      --bg: #f8f9fa;
+      --card-bg: #fff;
+      --muted: #7c7c7c;
+      --radius: 14px;
+      --shadow: 0 4px 24px rgba(34,34,59,0.08);
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: 'Roboto', Arial, sans-serif;
+      color: var(--primary);
+    }
+    .cover {
+      background: var(--card-bg);
+      padding: 3rem 1rem 2rem 1rem;
+      text-align: center;
+      border-bottom-left-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .cover h1 {
+      margin: 0 0 0.8rem 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .cover .bio {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cover .contact {
+      font-size: 1rem;
+      color: var(--primary);
+      margin-top: 0.5rem;
+    }
+    main {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      padding: 0 1rem;
+    }
+    .project {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 2.5rem;
+      padding: 2rem 2rem 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .project-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 0 0 0.7rem 0;
+      color: var(--primary);
+      text-align: center;
+    }
+    .project-visuals img {
+      max-width: 320px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(34,34,59,0.10);
+      background: #f3f3f3;
+      object-fit: contain;
+      height: auto; /* Ensure natural height */
+      display: block;
+    }
+    .project-visuals img {
+      max-width: 320px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(34,34,59,0.10);
+      background: #f3f3f3;
+      object-fit: cover;
+    }
+    .project-section {
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto 0.7rem auto;
+    }
+    .project-section strong {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .project-section ul {
+      margin: 0.3rem 0 0.7rem 1.1rem;
+      padding: 0;
+      font-size: 1rem;
+    }
+    .project-section p {
+      margin: 0.4rem 0;
+      color: var(--primary);
+      font-size: 1rem;
+    }
+    .project-section .muted {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    @media (max-width: 700px) {
+      .project { padding: 1.1rem 0.6rem 1.5rem 0.6rem; }
+      .project-visuals { flex-direction: column; gap: 0.8rem; }
+      .project-section { padding: 0 0.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cover">
+    <h1>Jan Leuca Espelien</h1>
+    <div class="bio">
+      Rising sophomore at Columbia University majoring in electrical engineering with a minor in operations research. Incoming analog and power electronics summer intern at Draper, passionate about hands-on prototyping, PCB design, and problem-solving.
+    </div>
+    <div class="contact">
+      jle2161@columbia.edu
+    </div>
+  </div>
+  <main>
+    <!-- Project 1 -->
+    <div class="project">
+      <div class="project-title">Miniaturized High Voltage Power Supply for Electrostatic Precipitation</div>
+      <div class="project-section">
+        <strong>Description:</strong>
+        <p>Led a team of six undergraduate engineers in the design, optimization, and fabrication of a high-voltage (HV) power supply for an electrostatic precipitator (ESP)-driven facemask, aimed at enhancing portable air filtration efficiency.</p>
+      </div>
+      <div class="project-section">
+        <strong>Role:</strong>
+        <p>Team Lead at SEAL, responsible for technical leadership, power electronics design, and academic writing.</p>
+      </div>
+      <div class="project-section">
+        <strong>Key Contributions:</strong>
+        <ul>
+          <li>Developed a miniaturized HV DC-DC converter using flyback topology, IRFZ44N MOSFET switching, and a Seeeduino-based PWM control system.</li>
+          <li>Integrated a six-stage Cockcroft-Walton voltage multiplier to achieve up to 12 kV output from a 12 V LiPo battery, in a custom, curved PCB package.</li>
+          <li>Optimized electrode geometry and HV supply parameters, resulting in a 25% improvement in filtration efficiency compared to previous iterations (&gt;90% for submicron particles).</li>
+          <li>Oversaw full prototyping cycle, including PCB layout, component selection, manufacturing, and testing using a particle counter.</li>
+          <li>Co-authored a manuscript published at IEEE IECON 2024 and assisted in NSF grant proposal writing.</li>
+        </ul>
+      </div>
+      <div class="project-section">
+        <strong>Challenges:</strong>
+        <p class="muted">Fitting a high-voltage power supply and multiplier circuit within the limited volume of a wearable mask required innovative PCB design, component selection, and careful consideration of insulation and creepage distances.</p>
+      </div>
+      <div class="project-visuals">
+        <img src="HVPS.png" alt="HV Power Supply PCB">
+        <img src="HVPSBlockDiagram.png" alt="Respirator's Block Diagram">
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project">
+      <div class="project-title">Battery Management System Design – Columbia University Formula Racing</div>
+      <div class="project-section">
+        <strong>Description:</strong>
+        <p>Designing and prototyping a modular battery management system (BMS) for CUFR’s 2026 electric race car, using Analog Devices ADBMS6830 monitors and ADBMS6822 isoSPI transceivers to manage a 600V, 5.4 kWh lithium-ion battery pack within strict FSAE rules.</p>
+      </div>
+      <div class="project-section">
+        <strong>Role:</strong>
+        <p>High Voltage Team member, leading BMS hardware and firmware development.</p>
+      </div>
+      <div class="project-section">
+        <strong>Key Contributions:</strong>
+        <ul>
+          <li>Designed a daisy-chain configuration for 12 ADBMS6830 monitors (2 per battery segment, 12 cells each) for scalable voltage and temperature monitoring.</li>
+          <li>Selected components for intermediary circuitry (isolated power supplies, optocouplers, and fault protection) to meet FSAE safety standards.</li>
+          <li>Programmed a Texas Instruments C2000 microcontroller in Simulink/Embedded C to establish SPI communication, process cell data, and implement error-handling routines.</li>
+          <li>Created schematics in Altium Designer for ADBMS6830/6822 integration, high-voltage isolation barriers, and CAN FD communication layers; currently laying out PCB for fabrication.</li>
+        </ul>
+      </div>
+      <div class="project-section">
+        <strong>Challenges:</strong>
+        <p class="muted">Developing firmware in Simulink from scratch with little documentation; balancing FSAE safety, cost, and space constraints; debugging SPI timing mismatches between C2000 and ADBMS6830.</p>
+      </div>
+      <div class="project-visuals">
+        <img src="BMSBlockDiagram.png" alt="Block diagram for battery management system">
+        <img src="simulink.png" alt="Simulink file for C2000">
+        <img src="setup.jpg" alt="BMS hardware setup: C2000 Launchpad, SDP-K1 with ADBMS6822, and ADBMS6830 evaluation board">
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project">
+      <div class="project-title">EV Conversion Project – Electric Vehicle Drivetrain and BMS Integration</div>
+      <div class="project-section">
+        <strong>Objective:</strong>
+        <p>Convert a 2000 Mazda Miata to a fully electric drivetrain, integrating custom battery configuration, battery management, and high-voltage drive systems within the constraints of a high school garage environment.</p>
+      </div>
+      <div class="project-section">
+        <strong>Role:</strong>
+        <ul>
+          <li>Designed and fabricated custom battery enclosures using Inventor and CNC machining.</li>
+          <li>Selected and installed BMS, repaired faulty SMD components, programmed for voltage/temperature monitoring and fault detection.</li>
+          <li>Built wiring harness and integrated with other vehicle components.</li>
+          <li>Integrated CAN bus for real-time data exchange between BMS, charger, motor controller, and dashboard.</li>
+          <li>Bench-tested HV system and performed initial drive tests to validate system integration.</li>
+        </ul>
+      </div>
+      <div class="project-section">
+        <strong>Results:</strong>
+        <ul>
+          <li>Vehicle successfully operated under electric power, completing multiple test drives.</li>
+          <li>Batteries safely and reliably charge and discharge.</li>
+          <li>Achieved reliable CAN communication across all major subsystems.</li>
+        </ul>
+      </div>
+      <div class="project-visuals">
+        <img src="ev1.jpg" alt="EV Conversion - Miata">
+        <img src="ev2.jpg" alt="BMS Components">
+        <img src="ev3.jpg" alt="Batteries">
+      </div>
+    </div>
+  </main>
+</body>
+</html>
