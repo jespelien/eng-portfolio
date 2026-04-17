@@ -1,227 +1,559 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Jan Leuca Espelien | Engineering Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #22223b;
-      --accent: #4ea8de;
-      --bg: #f8f9fa;
-      --card-bg: #fff;
-      --muted: #7c7c7c;
-      --radius: 14px;
-      --shadow: 0 4px 24px rgba(34,34,59,0.08);
-    }
-    body {
-      margin: 0;
-      background: var(--bg);
-      font-family: 'Roboto', Arial, sans-serif;
-      color: var(--primary);
-    }
-    .cover {
-      background: var(--card-bg);
-      padding: 3rem 1rem 2rem 1rem;
-      text-align: center;
-      border-bottom-left-radius: var(--radius);
-      border-bottom-right-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .cover h1 {
-      margin: 0 0 0.8rem 0;
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-    .cover .bio {
-      font-size: 1.1rem;
-      color: var(--muted);
-      margin-bottom: 1.2rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .cover .contact {
-      font-size: 1rem;
-      color: var(--primary);
-      margin-top: 0.5rem;
-    }
-    main {
-      max-width: 900px;
-      margin: 2.5rem auto;
-      padding: 0 1rem;
-    }
-    .project {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      margin-bottom: 2.5rem;
-      padding: 2rem 2rem 2.5rem 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .project-title {
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin: 0 0 0.7rem 0;
-      color: var(--primary);
-      text-align: center;
-    }
-    .project-visuals img {
-      max-width: 320px;
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(34,34,59,0.10);
-      background: #f3f3f3;
-      object-fit: contain;
-      height: auto; /* Ensure natural height */
-      display: block;
-    }
-    .project-visuals img {
-      max-width: 320px;
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(34,34,59,0.10);
-      background: #f3f3f3;
-      object-fit: cover;
-    }
-    .project-section {
-      width: 100%;
-      max-width: 700px;
-      margin: 0 auto 0.7rem auto;
-    }
-    .project-section strong {
-      color: var(--accent);
-      font-weight: 700;
-    }
-    .project-section ul {
-      margin: 0.3rem 0 0.7rem 1.1rem;
-      padding: 0;
-      font-size: 1rem;
-    }
-    .project-section p {
-      margin: 0.4rem 0;
-      color: var(--primary);
-      font-size: 1rem;
-    }
-    .project-section .muted {
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-    @media (max-width: 700px) {
-      .project { padding: 1.1rem 0.6rem 1.5rem 0.6rem; }
-      .project-visuals { flex-direction: column; gap: 0.8rem; }
-      .project-section { padding: 0 0.2rem; }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jan Leuca Espelien — ECE · Hardware · Columbia</title>
+<meta name="description" content="Jan Leuca Espelien — ECE student at Columbia University. Hardware engineer focused on analog, mixed-signal, and embedded systems. Incoming at Apple." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1e8;
+    --surface: #efe8db;
+    --surface-2: #e7dfd0;
+    --text: #1f1c18;
+    --text-muted: #6b6358;
+    --border: #d9cfbd;
+    --accent: #b1573b; /* warm terracotta */
+    --accent-soft: rgba(177, 87, 59, 0.12);
+    --shadow: 0 1px 2px rgba(31, 28, 24, 0.04), 0 8px 24px rgba(31, 28, 24, 0.04);
+    --radius: 14px;
+    --maxw: 1080px;
+    --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --sans: "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+
+  html.dark {
+    --bg: #1a1714;
+    --surface: #221e1a;
+    --surface-2: #2a2521;
+    --text: #f1ebe0;
+    --text-muted: #9a9085;
+    --border: #36302a;
+    --accent: #d27a5e;
+    --accent-soft: rgba(210, 122, 94, 0.14);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.65;
+    letter-spacing: -0.005em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::selection { background: var(--accent-soft); color: var(--text); }
+
+  a { color: inherit; text-decoration: none; }
+
+  .container {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- NAV ---------- */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in oklab, var(--bg) 88%, transparent);
+    backdrop-filter: saturate(140%) blur(12px);
+    -webkit-backdrop-filter: saturate(140%) blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+  .nav.scrolled { border-bottom-color: var(--border); }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--serif);
+    font-size: 20px;
+    letter-spacing: 0.01em;
+  }
+  .brand svg { display: block; }
+  .brand-text { font-style: italic; white-space: nowrap; }
+  .brand-short { display: none; }
+  @media (max-width: 480px) {
+    .brand-full { display: none; }
+    .brand-short { display: inline; }
+    .brand { font-size: 17px; }
+  }
+
+
+  .nav-links {
+    display: flex; align-items: center; gap: 30px;
+  }
+  .nav-link {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    transition: color 0.2s ease;
+    position: relative;
+  }
+  .nav-link:hover { color: var(--text); }
+  .nav-link::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -6px;
+    height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  .nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
+
+  .theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    width: 36px; height: 36px;
+    border-radius: 999px;
+    display: inline-flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .theme-toggle:hover { color: var(--text); border-color: var(--text-muted); }
+  .theme-toggle svg { width: 16px; height: 16px; }
+  .theme-toggle .icon-sun { display: none; }
+  html.dark .theme-toggle .icon-sun { display: block; }
+  html.dark .theme-toggle .icon-moon { display: none; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    min-height: calc(100vh - 68px);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 80px 0 60px;
+    position: relative;
+  }
+  .hero-eyebrow {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+    font-weight: 500;
+  }
+  .hero-eyebrow .dot {
+    display: inline-block; width: 6px; height: 6px; border-radius: 999px;
+    background: var(--accent); margin-right: 10px; vertical-align: middle;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(56px, 11vw, 132px);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    margin: 0 0 28px;
+  }
+  .hero h1 .italic { font-style: italic; color: var(--accent); }
+  .hero-tag {
+    font-size: clamp(17px, 1.6vw, 20px);
+    color: var(--text-muted);
+    max-width: 640px;
+    margin: 0;
+  }
+  .hero-tag .sep {
+    display: inline-block; margin: 0 10px; opacity: 0.5;
+  }
+  .scroll-cue {
+    position: absolute; left: 28px; bottom: 36px;
+    display: inline-flex; align-items: center; gap: 12px;
+    font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .scroll-cue .line {
+    width: 36px; height: 1px; background: var(--text-muted);
+    position: relative; overflow: hidden;
+  }
+  .scroll-cue .line::after {
+    content: ""; position: absolute; inset: 0;
+    background: var(--accent);
+    transform: translateX(-100%);
+    animation: scrollLine 2.4s ease-in-out infinite;
+  }
+  @keyframes scrollLine {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section { padding: 120px 0; }
+  .section-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 54px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin: 0 0 48px;
+    max-width: 720px;
+  }
+  .section-title .italic { font-style: italic; color: var(--accent); }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .about-prose p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text);
+    margin: 0 0 20px;
+    max-width: 640px;
+  }
+  .about-prose p + p { color: var(--text-muted); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 13px 22px;
+    border-radius: 999px;
+    font-family: var(--sans);
+    font-size: 14.5px;
+    font-weight: 500;
+    border: 1px solid var(--text);
+    background: var(--text);
+    color: var(--bg);
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+  .btn svg { width: 15px; height: 15px; }
+
+  .btn.btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+  }
+  .btn.btn-ghost:hover { border-color: var(--text); }
+
+  .about-actions { margin-top: 32px; }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 22px;
+  }
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px 28px;
+    display: flex; flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-card:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in oklab, var(--accent) 40%, var(--border));
+  }
+  .project-index {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .project-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 12px;
+  }
+  .project-desc {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin: 0 0 22px;
+    flex: 1;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  /* CONTACT */
+  #contact { text-align: center; padding-bottom: 80px; }
+  .contact-inner {
+    max-width: 620px; margin: 0 auto;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .contact-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(40px, 6vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin: 0 0 20px;
+  }
+  .contact-title .italic { font-style: italic; color: var(--accent); }
+  .contact-sub {
+    color: var(--text-muted);
+    font-size: 17px;
+    margin: 0 0 40px;
+    max-width: 480px;
+  }
+  .contact-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .email-line {
+    margin-top: 36px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--text);
+  }
+  .email-line a {
+    border-bottom: 1px solid var(--border);
+    transition: border-color 0.2s ease;
+  }
+  .email-line a:hover { border-color: var(--accent); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 0;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+  }
+
+  /* Reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .container { padding: 0 22px; }
+    .nav-links { gap: 18px; }
+    .nav-link { font-size: 14px; }
+    section { padding: 90px 0; }
+    .scroll-cue { left: 22px; bottom: 28px; }
+    .project-card { padding: 26px 24px; }
+  }
+  @media (max-width: 420px) {
+    .nav-links .nav-link[data-hide-sm] { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
 </head>
 <body>
-  <div class="cover">
-    <h1>Jan Leuca Espelien</h1>
-    <div class="bio">
-      Electrical Engineering sophomore with hands-on experience in hardware bring-up, board-level design, and embedded firmware development. Skilled in multi-layer PCB layout, SPICE simulation, and system validation using lab instruments. Proficient in test automation and hardware validation software using Python, C/C++, MATLAB, and NI VISA. Experienced with embedded microcontrollers (MSP430, TI C2000) and communication protocols (SPI, UART, I2C).
-    </div>
-    <div class="contact">
-      jle2161@columbia.edu
-    </div>
+
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand" aria-label="JLE — Home">
+      <!-- Monogram JLE -->
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
+        <!-- J -->
+        <path d="M4 6 L10 6 M7 6 L7 22 Q7 26 4 26" />
+        <!-- L -->
+        <path d="M13 6 L13 26 L19 26" />
+        <!-- E -->
+        <path d="M22 6 L28 6 M22 6 L22 26 L28 26 M22 16 L27 16" />
+      </svg>
+      <span class="brand-text"><span class="brand-full">Jan Leuca Espelien</span><span class="brand-short">Jan L. Espelien</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="nav-link" href="#about" data-hide-sm>About</a>
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#contact">Contact</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+    </nav>
   </div>
-  <main>
-    <!-- Project 1 -->
-    <div class="project">
-      <div class="project-title">Miniaturized High Voltage Power Supply for Electrostatic Precipitation</div>
-      <div class="project-section">
-        <strong>Description:</strong>
-        <p>Led a team of six undergraduate engineers in the design, optimization, and fabrication of a high-voltage (HV) power supply for an electrostatic precipitator (ESP)-driven facemask, aimed at enhancing portable air filtration efficiency.</p>
-      </div>
-      <div class="project-section">
-        <strong>Role:</strong>
-        <p>Team Lead at SEAL, responsible for technical leadership, power electronics design, and academic writing.</p>
-      </div>
-      <div class="project-section">
-        <strong>Key Contributions:</strong>
-        <ul>
-          <li>Developed a miniaturized HV DC-DC converter using flyback topology, IRFZ44N MOSFET switching, and a Seeeduino-based PWM control system.</li>
-          <li>Integrated a six-stage Cockcroft-Walton voltage multiplier to achieve up to 12 kV output from a 12 V LiPo battery, in a custom, curved PCB package.</li>
-          <li>Optimized electrode geometry and HV supply parameters, resulting in a 25% improvement in filtration efficiency compared to previous iterations (&gt;90% for submicron particles).</li>
-          <li>Oversaw full prototyping cycle, including PCB layout, component selection, manufacturing, and testing using a particle counter.</li>
-          <li>Co-authored a manuscript published at IEEE IECON 2024 and assisted in NSF grant proposal writing.</li>
-        </ul>
-      </div>
-      <div class="project-section">
-        <strong>Challenges:</strong>
-        <p class="muted">Fitting a high-voltage power supply and multiplier circuit within the limited volume of a wearable mask required innovative PCB design, component selection, and careful consideration of insulation and creepage distances.</p>
-      </div>
-      <div class="project-visuals">
-        <img src="HVPS.png" alt="HV Power Supply PCB">
-        <img src="HVPSBlockDiagram.png" alt="Respirator's Block Diagram">
-      </div>
-    </div>
+</header>
 
-    <!-- Project 2 -->
-    <div class="project">
-      <div class="project-title">Battery Management System Design – Columbia University Formula Racing</div>
-      <div class="project-section">
-        <strong>Description:</strong>
-        <p>Designing and prototyping a modular battery management system (BMS) for CUFR’s 2026 electric race car, using Analog Devices ADBMS6830 monitors and ADBMS6822 isoSPI transceivers to manage a 600V, 5.4 kWh lithium-ion battery pack within strict FSAE rules.</p>
-      </div>
-      <div class="project-section">
-        <strong>Role:</strong>
-        <p>High Voltage Team member, leading BMS hardware and firmware development.</p>
-      </div>
-      <div class="project-section">
-        <strong>Key Contributions:</strong>
-        <ul>
-          <li>Designed a daisy-chain configuration for 12 ADBMS6830 monitors (2 per battery segment, 12 cells each) for scalable voltage and temperature monitoring.</li>
-          <li>Selected components for intermediary circuitry (isolated power supplies, optocouplers, and fault protection) to meet FSAE safety standards.</li>
-          <li>Programmed a Texas Instruments C2000 microcontroller in Simulink/Embedded C to establish SPI communication, process cell data, and implement error-handling routines.</li>
-          <li>Created schematics in Altium Designer for ADBMS6830/6822 integration, high-voltage isolation barriers, and CAN FD communication layers; currently laying out PCB for fabrication.</li>
-        </ul>
-      </div>
-      <div class="project-section">
-        <strong>Challenges:</strong>
-        <p class="muted">Developing firmware in Simulink from scratch with little documentation; balancing FSAE safety, cost, and space constraints; debugging SPI timing mismatches between C2000 and ADBMS6830.</p>
-      </div>
-      <div class="project-visuals">
-        <img src="BMSBlockDiagram.png" alt="Block diagram for battery management system">
-        <img src="simulink.png" alt="Simulink file for C2000">
-        <img src="setup.jpg" alt="BMS hardware setup: C2000 Launchpad, SDP-K1 with ADBMS6822, and ADBMS6830 evaluation board">
-      </div>
+<main id="top">
+  <section class="hero container" aria-label="Introduction">
+    <div class="hero-eyebrow reveal"><span class="dot"></span>Hardware Engineer · New York</div>
+    <h1 class="reveal">Jan Leuca<br/><span class="italic">Espelien.</span></h1>
+    <p class="hero-tag reveal">
+      ECE <span class="sep">·</span> Hardware <span class="sep">·</span> Columbia University <span class="sep">·</span> Incoming @ Apple
+    </p>
+    <div class="scroll-cue reveal" aria-hidden="true">
+      <span>Scroll</span>
+      <span class="line"></span>
     </div>
+  </section>
 
-    <!-- Project 3 -->
-    <div class="project">
-      <div class="project-title">EV Conversion Project – Electric Vehicle Drivetrain and BMS Integration</div>
-      <div class="project-section">
-        <strong>Objective:</strong>
-        <p>Convert a 2000 Mazda Miata to a fully electric drivetrain, integrating custom battery configuration, battery management, and high-voltage drive systems within the constraints of a high school garage environment.</p>
-      </div>
-      <div class="project-section">
-        <strong>Role:</strong>
-        <ul>
-          <li>Designed and fabricated custom battery enclosures using Inventor and CNC machining.</li>
-          <li>Selected and installed BMS, repaired faulty SMD components, programmed for voltage/temperature monitoring and fault detection.</li>
-          <li>Built wiring harness and integrated with other vehicle components.</li>
-          <li>Integrated CAN bus for real-time data exchange between BMS, charger, motor controller, and dashboard.</li>
-          <li>Bench-tested HV system and performed initial drive tests to validate system integration.</li>
-        </ul>
-      </div>
-      <div class="project-section">
-        <strong>Results:</strong>
-        <ul>
-          <li>Vehicle successfully operated under electric power, completing multiple test drives.</li>
-          <li>Batteries safely and reliably charge and discharge.</li>
-          <li>Achieved reliable CAN communication across all major subsystems.</li>
-        </ul>
-      </div>
-      <div class="project-visuals">
-        <img src="ev1.jpg" alt="EV Conversion - Miata">
-        <img src="ev2.jpg" alt="BMS Components">
-        <img src="ev3.jpg" alt="Batteries">
+  <section id="about" class="container">
+    <div class="section-label reveal">01 — About</div>
+    <h2 class="section-title reveal">Building the <span class="italic">physical layer</span> of modern systems.</h2>
+    <div class="about-grid">
+      <div class="about-prose reveal">
+        <p>
+          I work on analog and mixed-signal circuit design, embedded systems, and the integration of complex electrical hardware — the layer where silicon meets the world.
+        </p>
+        <p>
+          Outside of school I'm drawn to deep-tech startups and the venture side of frontier hardware. I'm well versed in high-voltage and sensing circuitry, and have shipped or contributed to projects ranging from the Apple Watch and projectile guidance systems for the U.S. Navy, to Columbia FSAE's Battery Management System, an EV Mazda Miata conversion, a hobbyist fusion reactor, a low-cost brain–computer interface, a standalone GPS speedometer for marine and automotive use, and an investment thesis on distributed compute for a venture firm.
+        </p>
+        <div class="about-actions">
+          <a href="#" class="btn" download>
+            Download résumé
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 11l6 6 6-6M5 21h14"/></svg>
+          </a>
+        </div>
       </div>
     </div>
-  </main>
+  </section>
+
+  <section id="projects" class="container">
+    <div class="section-label reveal">02 — Selected Work</div>
+    <h2 class="section-title reveal">Hardware projects, <span class="italic">end to end.</span></h2>
+
+    <div class="projects-grid">
+      <article class="project-card reveal">
+        <div class="project-index">001</div>
+        <h3 class="project-title">FSAE Battery Management System</h3>
+        <p class="project-desc">Custom BMS for Columbia FSAE's accumulator pack — cell monitoring, balancing, and isolation built around the ADBMS6830 stack.</p>
+        <div class="chips">
+          <span class="chip">ADBMS6830</span>
+          <span class="chip">Altium</span>
+          <span class="chip">SPI</span>
+          <span class="chip">I²C</span>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-index">002</div>
+        <h3 class="project-title">FPGA Signal Processing</h3>
+        <p class="project-desc">Real-time DSP pipeline implemented in VHDL — filtering, decimation, and feature extraction targeting low-latency sensing applications.</p>
+        <div class="chips">
+          <span class="chip">VHDL</span>
+          <span class="chip">FPGA</span>
+          <span class="chip">DSP</span>
+          <span class="chip">Vivado</span>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-index">003</div>
+        <h3 class="project-title">GPS Speedometer</h3>
+        <p class="project-desc">Standalone GPS-driven speed and heading display for marine and automotive use — STM32 firmware, custom PCB, sunlight-readable display.</p>
+        <div class="chips">
+          <span class="chip">STM32</span>
+          <span class="chip">C++</span>
+          <span class="chip">Altium</span>
+          <span class="chip">u-blox</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="container">
+    <div class="contact-inner">
+      <div class="section-label reveal">03 — Contact</div>
+      <h2 class="contact-title reveal">Let's <span class="italic">talk hardware.</span></h2>
+      <p class="contact-sub reveal">Open to conversations about hardware roles, deep-tech ventures, and interesting circuits. I usually reply within a day.</p>
+      <div class="contact-actions reveal">
+        <a href="#" class="btn" target="_blank" rel="noopener">
+          Connect on LinkedIn
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3A2 2 0 0 1 21 5v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34V10.5H5.67v7.84h2.67zM7 9.34a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zm11.34 9V14a3.34 3.34 0 0 0-3.34-3.5 2.88 2.88 0 0 0-2.62 1.43V10.5H9.71v7.84h2.67v-4.34c0-1.14.21-2.24 1.62-2.24s1.43 1.31 1.43 2.32v4.26h2.91z"/></svg>
+        </a>
+        <a href="mailto:hello@example.com" class="btn btn-ghost">Email me</a>
+      </div>
+      <p class="email-line reveal">
+        <a href="mailto:hello@example.com">hello@example.com</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Jan Leuca Espelien</span>
+    <span>Designed &amp; built in New York.</span>
+  </div>
+</footer>
+
+<script>
+  // Theme: system default + manual toggle, persisted
+  (function () {
+    const root = document.documentElement;
+    const stored = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initial = stored || (prefersDark ? 'dark' : 'light');
+    if (initial === 'dark') root.classList.add('dark');
+
+    const toggle = document.getElementById('themeToggle');
+    toggle.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    // React to system changes only if user hasn't chosen
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) {
+        root.classList.toggle('dark', e.matches);
+      }
+    });
+  })();
+
+  // Sticky nav border on scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const delay = parseInt(el.dataset.delay || '0', 10);
+        setTimeout(() => el.classList.add('is-visible'), delay);
+        io.unobserve(el);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.dataset.delay = (i % 6) * 70;
+    io.observe(el);
+  });
+
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
