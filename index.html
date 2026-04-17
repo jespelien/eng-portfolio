@@ -155,7 +155,7 @@
     letter-spacing: -0.02em;
     margin: 0 0 28px;
   }
-  .hero h1 .italic { font-style: italic; color: var(--accent); }
+  .hero h1 .italic { font-style: italic; color: var(--text); }
   .hero-tag {
     font-size: clamp(17px, 1.6vw, 20px);
     color: var(--text-muted);
@@ -206,7 +206,7 @@
     margin: 0 0 48px;
     max-width: 720px;
   }
-  .section-title .italic { font-style: italic; color: var(--accent); }
+  .section-title .italic { font-style: italic; color: var(--text); }
 
   /* ABOUT */
   .about-grid {
@@ -316,7 +316,7 @@
     letter-spacing: -0.015em;
     margin: 0 0 20px;
   }
-  .contact-title .italic { font-style: italic; color: var(--accent); }
+  .contact-title .italic { font-style: italic; color: var(--text); }
   .contact-sub {
     color: var(--text-muted);
     font-size: 17px;
@@ -418,14 +418,16 @@
 
   <section id="about" class="container">
     <div class="section-label reveal">01 — About</div>
-    <h2 class="section-title reveal">Building the <span class="italic">physical layer</span> of modern systems.</h2>
     <div class="about-grid">
       <div class="about-prose reveal">
         <p>
-          I work on analog and mixed-signal circuit design, embedded systems, and the integration of complex electrical hardware — the layer where silicon meets the world.
+          I currently work on analog and mixed-signal circuit design, embedded systems, and system integration of complex electrical systems.
         </p>
         <p>
-          Outside of school I'm drawn to deep-tech startups and the venture side of frontier hardware. I'm well versed in high-voltage and sensing circuitry, and have shipped or contributed to projects ranging from the Apple Watch and projectile guidance systems for the U.S. Navy, to Columbia FSAE's Battery Management System, an EV Mazda Miata conversion, a hobbyist fusion reactor, a low-cost brain–computer interface, a standalone GPS speedometer for marine and automotive use, and an investment thesis on distributed compute for a venture firm.
+          I am interested in deep-tech startups and venture capital.
+        </p>
+        <p>
+          Various projects I've worked on include the Apple Watch, projectile guidance systems for the Navy, Columbia FSAE's Battery Management System, an EV Mazda Miata conversion, a hobbyist fusion reactor, a low-cost brain–computer interface, a standalone GPS-speedometer for marine and automotive use, and an investment thesis on distributed compute for a VC firm.
         </p>
         <div class="about-actions">
           <a href="#" class="btn" download>
@@ -439,7 +441,6 @@
 
   <section id="projects" class="container">
     <div class="section-label reveal">02 — Selected Work</div>
-    <h2 class="section-title reveal">Hardware projects, <span class="italic">end to end.</span></h2>
 
     <div class="projects-grid">
       <article class="project-card reveal">
@@ -456,25 +457,25 @@
 
       <article class="project-card reveal">
         <div class="project-index">002</div>
-        <h3 class="project-title">FPGA Signal Processing</h3>
-        <p class="project-desc">Real-time DSP pipeline implemented in VHDL — filtering, decimation, and feature extraction targeting low-latency sensing applications.</p>
+        <h3 class="project-title">Draper — Analog &amp; Power Electronics</h3>
+        <p class="project-desc">Analog and power electronics intern working on guidance and defense hardware — board-level design, bring-up, and validation of mixed-signal circuitry.</p>
         <div class="chips">
-          <span class="chip">VHDL</span>
-          <span class="chip">FPGA</span>
-          <span class="chip">DSP</span>
-          <span class="chip">Vivado</span>
+          <span class="chip">Analog</span>
+          <span class="chip">Power Electronics</span>
+          <span class="chip">Mixed-Signal</span>
+          <span class="chip">Bring-up</span>
         </div>
       </article>
 
       <article class="project-card reveal">
         <div class="project-index">003</div>
-        <h3 class="project-title">GPS Speedometer</h3>
-        <p class="project-desc">Standalone GPS-driven speed and heading display for marine and automotive use — STM32 firmware, custom PCB, sunlight-readable display.</p>
+        <h3 class="project-title">UW SEAL Lab — HV Circuit Design</h3>
+        <p class="project-desc">High-voltage circuit design and multi-layer PCB layout, hardware bring-up, and academic writing — contributed to a published research paper.</p>
         <div class="chips">
-          <span class="chip">STM32</span>
-          <span class="chip">C++</span>
-          <span class="chip">Altium</span>
-          <span class="chip">u-blox</span>
+          <span class="chip">High Voltage</span>
+          <span class="chip">PCB Layout</span>
+          <span class="chip">Bring-up</span>
+          <span class="chip">Research</span>
         </div>
       </article>
     </div>
@@ -483,17 +484,15 @@
   <section id="contact" class="container">
     <div class="contact-inner">
       <div class="section-label reveal">03 — Contact</div>
-      <h2 class="contact-title reveal">Let's <span class="italic">talk hardware.</span></h2>
-      <p class="contact-sub reveal">Open to conversations about hardware roles, deep-tech ventures, and interesting circuits. I usually reply within a day.</p>
       <div class="contact-actions reveal">
-        <a href="#" class="btn" target="_blank" rel="noopener">
+        <a href="https://www.linkedin.com/in/jan-espelien/" class="btn" target="_blank" rel="noopener">
           Connect on LinkedIn
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3A2 2 0 0 1 21 5v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34V10.5H5.67v7.84h2.67zM7 9.34a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zm11.34 9V14a3.34 3.34 0 0 0-3.34-3.5 2.88 2.88 0 0 0-2.62 1.43V10.5H9.71v7.84h2.67v-4.34c0-1.14.21-2.24 1.62-2.24s1.43 1.31 1.43 2.32v4.26h2.91z"/></svg>
         </a>
-        <a href="mailto:hello@example.com" class="btn btn-ghost">Email me</a>
+        <a href="mailto:jan.e@columbia.edu" class="btn btn-ghost">Email me</a>
       </div>
       <p class="email-line reveal">
-        <a href="mailto:hello@example.com">hello@example.com</a>
+        <a href="mailto:jan.e@columbia.edu">jan.e@columbia.edu</a>
       </p>
     </div>
   </section>
